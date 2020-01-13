@@ -9,7 +9,7 @@
 		</property>
 	</bean> -->
 	
-	<bean id = "grade" class="com.javalec.ex.Grade">
+<!-- 	<bean id = "grade" class="com.javalec.ex.Grade">
 	
 	</bean>
 	
@@ -27,8 +27,46 @@
 		<property name = "grade">
 			<ref bean = "grade"></ref>
 		</property>
+	</bean> -->
+	
+	<!-- <bean id = "tri" class="com.javalec.ex.Triangle">
+		
+	</bean> -->
+	
+	<!-- Student studnet1 = new Studnet(홍길동,10,3학년,20번) -->
+	<!-- bean id = "student1" class="com.javalec.ex.Student">
+		<constructor-arg>
+			<value>홍길동</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>10</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>3학년</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>20번</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id = "sInfo" class="com.javalec.ex.studentInfo">
+		<constructor-arg>
+			<ref bean = "student1" />
+		</constructor-arg>	
 	</bean>
 	
 	
+	<bean id = "student2" class="com.javalec.ex.Student">
+		<constructor-arg value = "이진이 " />
+		<constructor-arg value = "16살 " />
+		<constructor-arg value = "1반 " />
+		<constructor-arg value = "1번 " />
+	</bean> -->
 	
+	
+	<!-- <bean id = "pencil" class= "com.javalec.ex.Pencil6BWithEreaser"/>
+	<bean id = "pencil4b" class= "com.javalec.ex.Pencil4B"/> -->
+	
+	<bean id = "student" class= "com.javalec.ex.Student" />
+	<bean id = "otherStudent" class= "com.javalec.ex.OtherStudent" />
 </beans>

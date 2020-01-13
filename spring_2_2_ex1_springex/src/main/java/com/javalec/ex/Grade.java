@@ -8,7 +8,7 @@ public class Grade {
 	
 	
 	public void avgGrade(double eng, double math, double kor) {
-		double avg = (eng+math+kor) /3.0;
+		double avg = (eng + math + kor) / 3.0;
 		
 		System.out.println("점수 평균 : " + avg);
 		
