@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.bit.board.mapper.BoardMapper;
+import edu.bit.board.page.Criteria;
 import edu.bit.board.vo.BoardVO;
 
 @Service
@@ -42,5 +43,16 @@ public class BoardService {
 	public void delete(BoardVO boardVO) {
 		boardmapper.delete(boardVO);
 		
+	}
+	
+///////////////////////////////////////////////////////////////////////////////////////
+	
+	public int selectCountBoard() {
+		return boardmapper.selectCountBoard();
+	}
+
+	public List<BoardVO> selectBoardList(Criteria criteria) {
+		
+		return boardmapper.selectBoardListPage(criteria);
 	}
 }

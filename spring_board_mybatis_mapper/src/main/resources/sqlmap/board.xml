@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- <![CDATA [요 사이에 있는 것은 XML이 아니다  ]]>-->
+	<mapper namespace="edu.bit.board.mapper.BoardMapper">
+		<select id="selectBoardListPage" resultType="edu.bit.board.vo.BoardVO" parameterType="edu.bit.board.page.Criteria">
+	<![CDATA[
+	
+	SELECT * FROM
+	(
+        SELECT
+            A.*,
+            ROWNUM AS RNUM,
+            COUNT(*) OVER() AS TOTCNT
+        FROM
+            (
+                SELECT
+                    *
+                FROM
+                    mvc_board
+                ORDER BY bid desc
+             
+            ) A
+    )WHERE RNUM >= #{startNum} AND RNUM <= #{endNum}
+	
+  	]]>
+	</select>
+	</mapper>

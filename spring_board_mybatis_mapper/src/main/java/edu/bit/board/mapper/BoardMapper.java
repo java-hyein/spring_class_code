@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import edu.bit.board.page.Criteria;
 import edu.bit.board.vo.BoardVO;
 
 public interface BoardMapper {
@@ -22,7 +23,7 @@ public interface BoardMapper {
 	public BoardVO selectBoardOne(String bId);
 	
 	@Select("select count(*) from mvc_board")
-	public int selectAllBoard();
+	public int selectCountBoard();
 	
 	@Update("update mvc_board set bStep = bStep + 1 where bGroup = #{bGroup} and bStep > #{bStep}")
 	public void updateShape(BoardVO boardVO);
@@ -35,4 +36,7 @@ public interface BoardMapper {
 	
 	@Delete("delete from mvc_board where bId = #{bId}")
 	public void delete(BoardVO boardVO);
+	
+	public List<BoardVO> selectBoardListPage(Criteria criteria);
+	
 }
