@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import edu.bit.board.page.Criteria;
 import edu.bit.board.page.PageMaker;
 import edu.bit.board.service.BoardService;
 import edu.bit.board.vo.BoardVO;
+import edu.bit.board.vo.UserVO;
 
 @Controller
 public class BoardController {
@@ -20,7 +22,15 @@ public class BoardController {
 	BoardService boardservice;
 	
 	@RequestMapping("/list")
-	public String list(Model model) {
+	public String list(Model model, HttpSession session) {
+		
+		/*
+		 * UserVO mem = (UserVO) session.getAttribute("member");
+		 * 
+		 * //첫번째 방법S if(mem == null) { System.out.println("There is no member session");
+		 * return "redirect:/"; }
+		 */
+		
 		System.out.println("list");
 		model.addAttribute("list", boardservice.selectBoardList());
 		return "list";

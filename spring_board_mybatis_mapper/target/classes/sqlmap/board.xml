@@ -19,7 +19,7 @@
                     *
                 FROM
                     mvc_board
-                ORDER BY bid desc
+                ORDER BY bGroup desc, bStep asc
              
             ) A
     )WHERE RNUM >= #{startNum} AND RNUM <= #{endNum}
