@@ -15,14 +15,14 @@
 	<%=path %>
 	<!-- member가 null이면 이 페이지를 보여준다.  -->
 	<c:if test = "${member == null}">
-	<form role = "form" method="post" autocomplete="off" action="<%=path %>/member/login">
+	<form role = "form" method="post"autocomplete="off" action="<%=path %>/member/login">
 		<p>
 			<label for ="userId">ID</label>
 			<input type = "text" id="userId" name ="id" />
 		</p>
 		<p>
 			<label for ="userPw">PW</label>
-			<input type = "password" id="userPw" name ="pw" />
+			<input type= "password" id = "userPw" name ="pw" />
 		</p>
 		<p><button type = "submit">LOGIN</button></p>
 	</form>
